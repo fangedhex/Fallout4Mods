@@ -1,0 +1,523 @@
+{
+	"modName": "UncappedSettlementSurplus",
+	"displayName": "Uncapped Settlement Surplus",
+	"minMcmVersion": 2,
+	"pluginRequirements": [],
+	"content": [
+		{
+			"type": "text",
+			"text": "<p align='center'><font size='24'>Uncapped Settlement Surplus</font></p>",
+			"html": true
+		},
+		{
+			"type": "section",
+			"text": "A propos"
+		},
+		{
+			"type": "text",
+			"text": "<p>Uncapped Settlement Surplus oblige les colonies à continuer à produire des biens excédentaires (nourriture, eau, ferraille, etc.), même après que les colonies en aient déjà collecté une quantité excédente. Des outils de contrôle du système d'attaque aléatoire, puisque ce système est directement affecté par le contenu de l'établi, sont également fournis.</p>",
+			"html": true
+		},
+		{
+			"type": "hiddenSwitcher",
+			"text": "Workshop Framework mode - some settings will display and operate slightly different while in this mode.",
+			"groupControl": 1,
+			"valueOptions": {
+				"sourceType": "GlobalValue",
+				"sourceForm": "UncappedSettlementSurplus.esp|835"
+			}
+		},
+		{
+			"type": "hiddenSwitcher",
+			"text": "Vanilla/legacy mode",
+			"groupControl": 2,
+			"valueOptions": {
+				"sourceType": "GlobalValue",
+				"sourceForm": "UncappedSettlementSurplus.esp|836"
+			}
+		},
+		{
+			"type": "text",
+			"text": "Notez que l'USS fonctionne actuellement en mode \"Workshop Framework\", ou \"lite\", ce qui signifie que certaines options de l'USS seront légèrement différentes de celles du mode \"vanille\", ou \"legacy\". Ce mode WSFW/lite réduit considérablement la pression que ce mod exerce sur le moteur de script du jeu, et est généralement plus précis et plus fiable également.",
+			"groupCondition": 1
+		},
+		{
+			"type": "text",
+			"text": "Notez que l'USS fonctionne actuellement en mode \"vanilla\", ou \"legacy\". Vous devriez envisager d'installer Workshop Framework, car cela permet à USS de passer en mode WSFW, ou mode \"lite\", qui est plus généralement précis et fiable, et met beaucoup moins de pression sur le moteur de script du jeu.",
+			"groupCondition": 2
+		}
+	],
+	"pages": [
+		{
+			"pageDisplayName": "Limites",
+			"content": [
+				{
+					"type": "hiddenSwitcher",
+					"text": "Workshop Framework mode - some settings will display and operate slightly different while in this mode.",
+					"groupControl": 1,
+					"valueOptions": {
+						"sourceType": "GlobalValue",
+						"sourceForm": "UncappedSettlementSurplus.esp|835"
+					}
+				},
+				{
+					"type": "hiddenSwitcher",
+					"text": "Vanilla/legacy mode",
+					"groupControl": 2,
+					"valueOptions": {
+						"sourceType": "GlobalValue",
+						"sourceForm": "UncappedSettlementSurplus.esp|836"
+					}
+				},
+				{
+					"type": "section",
+					"text": "Fonctionnalités"
+				},
+				{
+					"type": "text",
+					"text": "Ces options contrôlent les modifications que va faire USS."
+				},
+				{
+					"type": "switcher",
+					"id": "EnableFood:Caps",
+					"text": "Nourriture",
+					"help": "[Par défault: AVEC] Contrôle si USS va modifier ou non la limite de la nourriture. Vanilla: max 10 + nombre de colons",
+					"valueOptions": {
+						"sourceType": "GlobalValue",
+						"sourceForm": "UncappedSettlementSurplus.esp|820"
+					},
+					"action": {
+						"type": "CallFunction",
+						"form": "UncappedSettlementSurplus.esp|804",
+						"function": "ToggleSettingMCM",
+						"params": ["food"]
+					},
+					"groupControl": 4
+				},
+				{
+					"type": "switcher",
+					"id": "EnableWater:Caps",
+					"text": "Eau",
+					"help": "[Par défault: AVEC] Contrôle si USS va modifier ou non la limite d'eau. Vanilla: max 5 + nombre de colons / 4",
+					"valueOptions": {
+						"sourceType": "GlobalValue",
+						"sourceForm": "UncappedSettlementSurplus.esp|821"
+					},
+					"action": {
+						"type": "CallFunction",
+						"form": "UncappedSettlementSurplus.esp|804",
+						"function": "ToggleSettingMCM",
+						"params": ["water"]
+					},
+					"groupControl": 5
+				},
+				{
+					"type": "switcher",
+					"id": "EnableScrap:Caps",
+					"text": "Bric-à-brac",
+					"help": "[Par défault: AVEC] Contrôle si USS va modifier ou non la limite de bric-à-brac. Vanilla: max 100 + nombre de colons * 5",
+					"valueOptions": {
+						"sourceType": "GlobalValue",
+						"sourceForm": "UncappedSettlementSurplus.esp|822"
+					},
+					"action": {
+						"type": "CallFunction",
+						"form": "UncappedSettlementSurplus.esp|804",
+						"function": "ToggleSettingMCM",
+						"params": ["scrap"]
+					},
+					"groupControl": 6
+				}, 
+				{
+					"type": "switcher",
+					"id": "EnableFertilizer:Caps",
+					"text": "Engrais",
+					"help": "[Par défault: AVEC] Contrôle si USS va modifier ou non la limite d'engrais. Vanilla: jusqu'à 3 par jour; max 10",
+					"valueOptions": {
+						"sourceType": "GlobalValue",
+						"sourceForm": "UncappedSettlementSurplus.esp|823"
+					},
+					"action": {
+						"type": "CallFunction",
+						"form": "UncappedSettlementSurplus.esp|804",
+						"function": "ToggleSettingMCM",
+						"params": ["fertilizer"]
+					}
+				},
+				{
+					"type": "switcher",
+					"id": "EnableCaps:Caps",
+					"text": "Capsules",
+					"help": "[Par défault: AVEC] Contrôle si USS va modifier ou non la limite de capsules. Vanilla: jusqu'à 50 par jour",
+					"valueOptions": {
+						"sourceType": "GlobalValue",
+						"sourceForm": "UncappedSettlementSurplus.esp|827"
+					},
+					"action": {
+						"type": "CallFunction",
+						"form": "UncappedSettlementSurplus.esp|804",
+						"function": "ToggleSettingMCM",
+						"params": ["caps"]
+					}
+				},
+				{
+					"type": "spacer"
+				},
+				{
+					"type": "section",
+					"text": "Ajustement des limites",
+					"groupCondition": {"OR": [4,5,6]}
+				},
+				{
+					"type": "text",
+					"text": "Vous pouvez changer les limites que vous souhaitez, ci-dessous.<br><br>Notez que -1 signifie illimité.",
+					"html": true,
+					"groupCondition": {"OR": [4,5,6]}
+				},
+				{
+					"type": "slider",
+					"id": "CapFood:Caps",
+					"text": "Limite de nourriture",
+					"help": "[Par défault: -1] Le nombre maximum de nourriture qui peut être stocké dans l'établie avant que la production s'arrête.",
+					"valueOptions": {
+						"min": -1,
+						"max": 20000,
+						"step": 1,
+						"sourceType": "GlobalValue",
+						"sourceForm": "UncappedSettlementSurplus.esp|824"
+					},
+					"action": {
+						"type": "CallFunction",
+						"form": "UncappedSettlementSurplus.esp|804",
+						"function": "SetCap",
+						"params": ["food", "{value}"]
+					},
+					"groupCondition": 4
+				},
+				{
+					"type": "slider",
+					"id": "CapWater:Caps",
+					"text": "Limite d'eau",
+					"help": "[Par défault: -1] Le nombre maximum d'eau qui peut être stocké dans l'établie avant que la production s'arrête.",
+					"valueOptions": {
+						"min": -1,
+						"max": 20000,
+						"step": 1,
+						"sourceType": "GlobalValue",
+						"sourceForm": "UncappedSettlementSurplus.esp|825"
+					},
+					"action": {
+						"type": "CallFunction",
+						"form": "UncappedSettlementSurplus.esp|804",
+						"function": "SetCap",
+						"params": ["water", "{value}"]
+					},
+					"groupCondition": 5
+				},
+				{
+					"type": "slider",
+					"id": "CapScrap:Caps",
+					"text": "Limite de bric-à-brac",
+					"help": "[Par défault: -1] Le nombre maximum de bric-à-brac qui peut être stocké dans l'établie avant que la production s'arrête.",
+					"valueOptions": {
+						"min": -1,
+						"max": 20000,
+						"step": 1,
+						"sourceType": "GlobalValue",
+						"sourceForm": "UncappedSettlementSurplus.esp|826"
+					},
+					"action": {
+						"type": "CallFunction",
+						"form": "UncappedSettlementSurplus.esp|804",
+						"function": "SetCap",
+						"params": ["scrap", "{value}"]
+					},
+					"groupCondition": 6
+				},
+				{
+					"type": "spacer",
+					"groupCondition": {"OR": [4,5,6]}
+				},
+				
+				{
+					"type": "hiddenSwitcher",
+					"text": "DLC04 detection",
+					"groupControl": 10,
+					"valueOptions": {
+						"sourceType": "PropertyValueInt",
+						"sourceForm": "UncappedSettlementSurplus.esp|804",
+						"propertyName": "DLC04Installed"
+					}
+				},
+				{
+					"type": "spacer",
+					"groupCondition": 10
+				},
+				{
+					"type": "section",
+					"text": "Autres options",
+					"groupCondition": 10
+				},
+				{
+					"type": "switcher",
+					"id": "EnableTribute:Caps",
+					"text": "Coffre de tribu de Nuka World",
+					"help": "[Par défault: AVEC] Contrôle si les colons arrêtent d'ajouter des objets au coffre de tribu si la valeur total dépasse 1000 capsules.",
+					"valueOptions": {
+						"sourceType": "GlobalValue",
+						"sourceForm": "UncappedSettlementSurplus.esp|81F"
+					},
+					"groupCondition": 10
+				}
+			]
+		},
+		{
+			"pageDisplayName": "Réduction des attaques",
+			"content": [
+				{
+					"type": "hiddenSwitcher",
+					"text": "Workshop Framework mode - some settings will display and operate slightly different while in this mode.",
+					"groupControl": 1,
+					"valueOptions": {
+						"sourceType": "GlobalValue",
+						"sourceForm": "UncappedSettlementSurplus.esp|835"
+					}
+				},
+				{
+					"type": "hiddenSwitcher",
+					"text": "Vanilla/legacy mode",
+					"groupControl": 2,
+					"valueOptions": {
+						"sourceType": "GlobalValue",
+						"sourceForm": "UncappedSettlementSurplus.esp|836"
+					}
+				},
+				{
+					"type": "section",
+					"text": "Réduction des attaques"
+				},
+				{
+					"type": "text",
+					"text": "Cette fonction retire la nourriture et l'eau stockées du calcul du risque d'attaque de la colonie, empêchant ainsi les colonies disposant de stocks importants de subir des attaques très fréquentes. Si vous le souhaitez, vous pouvez également utiliser cette fonction pour désactiver complètement les attaques de colonies aléatoires.",
+					"groupCondition": 1
+				},
+				{
+					"type": "text",
+					"text": "<p>Cette fonction permet de régler le système d'attaque aléatoire des colonies de manière à ce que le fait de conserver des stocks importants de nourriture et d'eau sur votre établi ne déclenche pas d'attaques très fréquentes, à condition que vos colonies soient raisonnablement bien défendues.</p>",
+					"html": true,
+					"groupCondition": 2
+				},
+				{
+					"type": "section",
+					"text": "Fonctionnalité"
+				},
+				{
+					"type": "text",
+					"text": "<p>Notez que les modes \"Haute fiabilité\" ne sont généralement pas nécessaires, mais vous pouvez essayer de les activer si vous avez des problèmes avec cette fonctionnalité.</p>",
+					"html": true,
+					"groupCondition": 2
+				},
+				{
+					"type": "dropdown",
+					"text": "Réduction des attaques",
+					"valueOptions": {
+						"options": ["Désactivé", "Activé", "Pas d'attaques"],
+						"sourceType": "GlobalValue",
+						"sourceForm": "UncappedSettlementSurplus.esp|828"
+					},
+					"action": {
+						"type": "CallFunction",
+						"form": "UncappedSettlementSurplus.esp|804",
+						"function": "SetARSettingNum",
+						"params": ["{value}"]
+					},
+					"groupCondition": 1
+				},
+				{
+					"type": "dropdown",
+					"text": "Réduction des attaques",
+					"valueOptions": {
+						"options": ["Désactivé", "Activé", "Pas d'attaques", "Activé (haute fiabilité)", "Pas d'attaques (haute fiabilité)"],
+						"sourceType": "GlobalValue",
+						"sourceForm": "UncappedSettlementSurplus.esp|828"
+					},
+					"action": {
+						"type": "CallFunction",
+						"form": "UncappedSettlementSurplus.esp|804",
+						"function": "SetARSettingNum",
+						"params": ["{value}"]
+					},
+					"groupCondition": 2
+				},
+				{
+					"type": "spacer"
+				},
+				{
+					"type": "section",
+					"text": "Difficulté",
+					"groupCondition": 2
+				},
+				{
+					"type": "text",
+					"text": "<br>Ce réglage est assez technique ; en général, des réglages plus faciles signifient que la défense des colonies aura un impact plus important sur la fréquence des attaques aléatoires. Notez que ce réglage n'a d'importance que lorsque le réducteur d'attaque est réglé sur \"Activé\", ou \"Activé (haute fiabilité)\".",
+					"html": true,
+					"groupCondition": 2
+				},
+				{
+					"type": "dropdown",
+					"id": "ExpPreset:AR",
+					"text": "Préréglage de la difficulté",
+					"help": "[Par défault: Normal (0.65)]",
+					"valueOptions": {
+						"options": ["Facile", "Normal", "Difficile", "Personnalisé"],
+						"sourceType": "PropertyValueInt",
+						"sourceForm": "UncappedSettlementSurplus.esp|804",
+						"propertyName": "ARExponentMCM"
+					},
+					"action": {
+						"type": "CallFunction",
+						"form": "UncappedSettlementSurplus.esp|804",
+						"function": "SetARExponentMCM",
+						"params": ["{i}{value}"]
+					},
+					"groupCondition": 2
+				},
+				{
+					"type": "slider",
+					"id": "ExpCustom:AR",
+					"text": "Sélectionnez une valeur souhaité si vous avez mis sur \"Personnalisé\" au dessus",
+					"help": "[Par défault: Normal (0.65)]",
+					"valueOptions": {
+						"min": 0,
+						"max": 1.5,
+						"step": 0.01,
+						"sourceType": "GlobalValue",
+						"sourceForm": "UncappedSettlementSurplus.esp|829"
+					},
+					"action": {
+						"type": "CallFunction",
+						"form": "UncappedSettlementSurplus.esp|804",
+						"function": "SetARExponent",
+						"params": ["{value}"]
+					}, 
+					"groupCondition": 2
+				}
+			]
+		},
+		{
+			"pageDisplayName": "Remettre à zéro / Désinstaller",
+			"content": [
+				{
+					"type": "hiddenSwitcher",
+					"text": "Workshop Framework mode - some settings will display and operate slightly different while in this mode.",
+					"groupControl": 1,
+					"valueOptions": {
+						"sourceType": "GlobalValue",
+						"sourceForm": "UncappedSettlementSurplus.esp|835"
+					}
+				},
+				{
+					"type": "hiddenSwitcher",
+					"text": "Vanilla/legacy mode",
+					"groupControl": 2,
+					"valueOptions": {
+						"sourceType": "GlobalValue",
+						"sourceForm": "UncappedSettlementSurplus.esp|836"
+					}
+				},
+				{
+					"type": "section",
+					"text": "Remise à zéro"
+				},
+				{
+					"type": "text",
+					"text": "Ce menu devrait normalement vous permettre de réinitialiser les scripts d'USS, mais comme USS fonctionne en mode \"Workshop Framework\", il n'y a pas de scripts actifs à réinitialiser, donc cette option est désactivée.<br><br>Vous pouvez toujours, cependant, exécuter \"Confirm and Reset Settings\", qui réinitialisera tous les paramètres d'USS pour qu'ils soient aussi proches que possible de la vanille, ce qui désactivera effectivement USS. Vous pouvez ensuite basculer sélectivement les fonctionnalités d'USS une par une en utilisant les autres menus de cette holobande.",
+					"html": true,
+					"groupCondition": 1
+				},
+				{
+					"type": "text",
+					"text": "Si USS semble avoir des problèmes, l'exécution de \"Confirmer et remettre à zéro les scripts\" pourrait les résoudre. Cependant, cela est très rarement nécessaire. Sinon, l'exécution de \"Confirmer et réinitialiser les paramètres\" réinitialisera tous les paramètres d'USS pour qu'ils soient aussi proches que possible de ceux de la vanille, ce qui désactivera effectivement USS. Vous pouvez ensuite basculer sélectivement les fonctionnalités d'USS une par une en utilisant les autres menus de ce holotape.",
+					"html": true,
+					"groupCondition": 2
+				},
+				{
+					"type": "switcher",
+					"text": "Continuer ?",
+					"groupControl": 3
+				},
+				{
+					"type": "spacer",
+					"groupCondition": 3
+				},
+				{
+					"type": "button",
+					"id": "ResetScripts:Meta",
+					"text": "Confirmer et remettre à zéro les scripts",
+					"help": "Ce bouton va remettre à zéro les scripts d'USS",
+					"action": {
+						"type": "CallFunction",
+						"form": "UncappedSettlementSurplus.esp|804",
+						"function": "ResetScripts",
+						"params": [true]
+					},
+					"groupCondition": {"AND": [2,3]}
+				},
+				{
+					"type": "button",
+					"id": "ResetSettings:Meta",
+					"text": "Confirmer et réinitialiser les paramètres",
+					"help": "Ce bouton va réinitialiser les paramètres d'USS pour comme en vanilla.",
+					"action": {
+						"type": "CallFunction",
+						"form": "UncappedSettlementSurplus.esp|804",
+						"function": "ResetSettings",
+						"params": [true]
+					},
+					"groupCondition": 3
+				},
+				{
+					"type": "spacer"
+				},
+				{
+					"type": "section",
+					"text": "Désinstaller"
+				},
+				{
+					"type": "text",
+					"text": "Si vous souhaitez désinstalle Uncapped Settlement Surplus, cela arrête toutes les quêtes en cours et réinitialise tous les paramètres modifiés en vanilla. Cette opération ne peut être annulée sans réinstaller proprement USS ou charger une sauvegarde précédente.",
+					"html": true,
+					"groupCondition": 1
+				},
+				{
+					"type": "text",
+					"text": "Si vous souhaitez désinstaller Uncapped Settlement Surplus, cette fonction arrête tous les scripts et quêtes en cours pour préparer la désinstallation. Cette opération ne peut être annulée sans réinstaller proprement USS ou charger une sauvegarde précédente.",
+					"html": true,
+					"groupCondition": 2
+				},
+				{
+					"type": "switcher",
+					"text": "Continuer ?",
+					"groupControl": 4
+				},
+				{
+					"type": "spacer",
+					"groupCondition": 4
+				},
+				{
+					"type": "button",
+					"id": "Uninstall:Meta",
+					"text": "Confirmer et désinstaller",
+					"help": "Ce bouton va arrêter USS. Celà ne peut pas être annulé !",
+					"action": {
+						"type": "CallFunction",
+						"form": "UncappedSettlementSurplus.esp|804",
+						"function": "UninstallUSS",
+						"params": [true]
+					},
+					"groupCondition": 4
+				}
+			]
+		}
+	]
+}

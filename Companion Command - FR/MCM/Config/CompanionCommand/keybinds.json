@@ -1,0 +1,43 @@
+{
+  "modName": "CompanionCommand",
+  "keybinds": [
+    {
+      "id": "command_companion",
+      "desc": "Donner un ordre au compagnon",
+      "action": {
+        "type": "CallGlobalFunction",
+        "script": "CompanionCommand",
+        "function": "Command_Once",
+        "params": [0.0]
+      }
+    },
+    {
+      "id": "toggle_distance",
+      "desc": "Changer la distance du compagnon",
+      "action": {
+        "type": "CallGlobalFunction",
+        "script": "CompanionCommand",
+        "function": "ToggleDistance"
+      }
+    },
+    {
+      "id": "trade",
+      "desc": "Échanger avec votre compagnon",
+      "action": {
+        "type": "CallGlobalFunction",
+        "script": "CompanionCommand",
+        "function": "Trade"
+      }
+    },
+    {
+      "id": "toggle_hold",
+      "desc": "Maintien de la position",
+      "action": {
+        "type": "CallGlobalFunction",
+        "script": "CompanionCommand",
+        "function": "ToggleHold",
+        "params": [0.0]
+      }
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "minMcmVersion": 1,
+  "modName": "cc_cleaner",
+  "displayName": "CCCleaner",
+  "content": [
+    {
+      "text": "<font size=\"40\"><p align = \"center\">CCCleaner</p></font>",
+      "html": true,
+      "type": "text"
+    },
+    {
+      "type": "image",
+      "libName": "cc_cleaner",
+      "className": "cccleaner_logo"
+    },
+    {
+      "type": "spacer",
+	  "numLines":3
+    },
+        {
+          "id": "bMOTDEnabled:Main",
+          "text": "Afficher le message du jour du Création Club",
+          "type": "switcher",
+          "help": "Afficher ou non le message du CreationClub en haut à droite sur l'écran du menu principal.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bCCEntryEnabled:Main",
+          "text": "Afficher l'accès au Création Club dans le menu principal",
+          "type": "switcher",
+          "help": "Afficher ou non le bouton \"Creation Club\" dans le menu principal.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bModsEntryEnabled:Main",
+          "text": "Afficher l'accès aux mods dans le menu principal",
+          "type": "switcher",
+          "help": "Afficher ou non le bouton \"Mods\" dans le menu principal.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        }
+  ]
+}

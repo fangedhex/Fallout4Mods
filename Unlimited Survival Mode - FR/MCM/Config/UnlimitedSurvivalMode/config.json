@@ -1,0 +1,138 @@
+{
+  "minMcmVersion": 1,
+  "modName": "UnlimitedSurvivalMode",
+  "displayName": "Unlimited Survival Mode",
+  "content": [
+    {
+      "text": "<font size=\"40\"><p align = \"center\">Unlimited Survival Mode</p></font>",
+      "html": true,
+      "type": "text"
+    },
+
+	{
+      "text": "<font size=\"15\"><p align = \"center\">Ces paramètres demandent un redémarrage du jeu pour être appliqués.</p></font>",
+      "html": true,
+      "type": "text"
+    },
+	
+    {
+      "id": "iEnableFastTravel:Settings",
+      "text": "Activer le voyage rapide",
+      "type": "switcher",
+      "help": "Vous pouvez voyager rapidement entre des zone en mode survie.",
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+          }
+    },
+	
+    {
+      "id": "iEnableConsole:Settings",
+      "text": "Activer la console",
+      "type": "switcher",
+      "help": "Vous pouvez utiliser la console en mode survie.",
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+          }
+    },
+
+    {
+      "id": "iEnableGodMode:Settings",
+      "text": "Activer la commande TGM et ITM",
+      "type": "switcher",
+      "help": "Vous pouvez utiliser la commande TGM et ITM.",
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+          }
+    },
+
+    {
+      "id": "iEnableQuickSave:Settings",
+      "text": "Possibilité de faire des sauvegardes rapides",
+      "type": "switcher",
+      "help": "Réactive la sauvegarde rapide en jeu.",
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+          }
+    },
+
+    {
+      "id": "iEnableSaveLoadButton:Settings",
+      "text": "Réactiver le bouton Sauvegarder et Sauvegarde rapide",
+      "type": "switcher",
+      "help": "Possibilité d'utiliser les boutons dans le menu pause du jeu.",
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+          }
+    },
+
+    {
+      "id": "iCanReenableSurvivalMode:Settings",
+      "text": "Possibilité de revenir au mode survie",
+      "type": "switcher",
+      "help": "Vous pouvez revenir au mode survie même si vous êtes repassé en mode normal.",
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+          }
+    },
+
+    {
+      "id": "iShowAutoSaveSettings:Settings",
+      "text": "Options de sauvegarde automatique",
+      "type": "switcher",
+      "help": "Affiche les options de sauvegarde automatique dans le menu Options même si vous êtes en survie.",
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+          }
+    },
+
+    {
+      "id": "iEnableAutoSave:Settings",
+      "text": "Active les sauvergardes automatiques",
+      "type": "switcher",
+      "help": "Réactive le système de sauvegarde automatique effectué par le jeu.",
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+          }
+    },
+
+    {
+      "id": "iShowEnemyRedDotOnCompass:Settings",
+      "text": "Afficher les ennemis en rouge sur la boussole",
+      "type": "switcher",
+      "help": "Afficher les ennemis en rouge sur la boussole.",
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+          }
+    },
+
+    {
+      "id": "iShowLocationsOnCompass:Settings",
+      "text": "Afficher les points d'intérêt sur la boussole",
+      "type": "switcher",
+      "help": "Afficher les points d'intérêt non découverts sur la boussole.",
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+          }
+    },
+	
+    {
+      "id": "iDisableStimpakAmmoWeight:Settings",
+      "text": "Désactiver le poids des Stimpacks et des munitions",
+      "type": "switcher",
+      "help": "Désactiver le poids des Stimpacks et des munitions en mode survie.",
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+          }
+    },
+
+    {
+      "id": "iEnableAchievement:Settings",
+      "text": "Activer les succès",
+      "type": "switcher",
+      "help": "Activer les succès même si vous jouez avec des mods.",
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+          }
+    }
+  ]
+}

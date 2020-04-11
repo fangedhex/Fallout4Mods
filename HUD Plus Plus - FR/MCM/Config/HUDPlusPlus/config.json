@@ -1,0 +1,229 @@
+{
+  "minMcmVersion": 1,
+  "modName": "HUDPlusPlus",
+  "displayName": "HUD++",
+  "content": [
+    {
+		"text": "<p align='center'><font size='30'>HUD++</font></p>",
+		"html": true,
+		"type": "text"
+    },
+    {
+      "text": "A propos",
+      "type": "section"
+    },
+	
+    {
+      "text": "HUD++ ajoute des informations sur l'objet ou l'inventaire ciblé",
+      "type": "text"
+    },
+	
+    { "type": "spacer" },
+	
+    {
+      "text": "Mod Control",
+      "type": "section"
+    },
+	
+	{
+		"id": "HUDPlusPlus_SetQuickUseHotkey",
+		"text": "Raccourcis Utilisation rapide",
+		"type": "hotkey",
+		"help": "Appuyez sur cette touche pour utiliser l'objet : celà vous permez de lire un livre ou une holotape par exemple."
+    },
+	
+    {
+		"id": "bShowCrosshair:Settings",
+		"text": "Afficher le réticule",
+		"type": "switcher",
+		"help": "Cette option permet d'afficher ou non le réticule de visée",
+		"action": 
+		{
+			"type": "CallExternalFunction",
+            "plugin": "HUDPlusPlus",
+            "function": "onModSettingChange",
+            "params": ["bShowCrosshair|{value}"]
+		},
+		"valueOptions": 
+		{
+			"sourceType": "ModSettingBool"
+		}
+    },
+
+	{
+		"id": "bCrosshairItemCardVisible:Settings",
+		"text": "Afficher le panneau (réticule)",
+		"type": "switcher",
+		"help": "Affiche les détails de l'objet visé",
+		"action": 
+		{
+			"type": "CallExternalFunction",
+            "plugin": "HUDPlusPlus",
+            "function": "onModSettingChange",
+            "params": ["bCrosshairItemCardVisible|{value}"]
+		},
+		"valueOptions": 
+		{
+			"sourceType": "ModSettingBool"
+		}
+    },
+	
+    {
+		"id": "bQuickContainerItemCardVisible:Settings",
+		"text": "Affiche le panneau (conteneur)",
+		"type": "switcher",
+		"help": "Affiche les détails de l'objet sélectionné lorsqu'on parcourt le contenu d'un conteneur",
+		"action": 
+		{
+			"type": "CallExternalFunction",
+            "plugin": "HUDPlusPlus",
+            "function": "onModSettingChange",
+            "params": ["bQuickContainerItemCardVisible|{value}"]
+		},
+		"valueOptions": 
+		{
+			"sourceType": "ModSettingBool"
+		}
+    },
+	
+    {
+		"id": "bBriefItemInfoWidgetVisible:Settings",
+		"text": "Affiche les infos simples",
+		"type": "switcher",
+		"help": "Affiche le poids et la valeur sous le nom de l'objet.",
+		"action": 
+		{
+			"type": "CallExternalFunction",
+            "plugin": "HUDPlusPlus",
+            "function": "onModSettingChange",
+            "params": ["bBriefItemInfoWidgetVisible|{value}"]
+		},
+		"valueOptions": 
+		{
+			"sourceType": "ModSettingBool"
+		}
+    },	
+	
+	{
+		"id": "bSpecialItemIconVisible:Settings",
+		"text": "Afficher les icones pour les objets spéciaux",
+		"type": "switcher",
+		"help": "Affichez des icônes pour des objets spéciaux comme des objets de quête, des livres de compétences ou des livres que le joueur a lus.",
+		"action": 
+		{
+			"type": "CallExternalFunction",
+            "plugin": "HUDPlusPlus",
+            "function": "onModSettingChange",
+            "params": ["bSpecialItemIconVisible|{value}"]
+		},
+		"valueOptions": 
+		{
+			"sourceType": "ModSettingBool"
+		}
+    },
+		
+	{
+		"id": "crosshairItemCardPositioner",
+		"text": "Position du panneau (réticule de visée)",
+		"type": "positioner",
+		"help": "Sélectionnez cette option pour déplacer le panneau affiché lorsque vous visez un objet.",
+		"action": 
+		{
+			"type": "CallExternalFunction",
+            "plugin": "HUDPlusPlus",
+            "function": "onModSettingChange",
+            "params": ["crosshairItemCardPositioner"]
+		},
+		"valueOptions": 
+		{
+			"clipSource": "HUDPlusPlus_Position.swf",
+			"xSource": 
+			{
+				"id": "iCrosshairItemCardCoordX:Settings",
+				"sourceType": "ModSettingInt"
+			},
+			"ySource": 
+			{
+				"id": "iCrosshairItemCardCoordY:Settings",
+				"sourceType": "ModSettingInt"
+			},
+			"scalexSource": 
+			{
+				"id": "fCrosshairItemCardScale:Settings",
+				"sourceType": "ModSettingFloat"
+			}
+		}
+    },
+	
+	{
+		"id": "quickContainerItemCardPositioner",
+		"text": "Position du panneau (conteneur)",
+		"type": "positioner",
+		"help": "Sélectionnez cette option pour déplacer le panneau affiché lorsque vous visez un conteneur.",
+		"action": 
+		{
+			"type": "CallExternalFunction",
+            "plugin": "HUDPlusPlus",
+            "function": "onModSettingChange",
+            "params": ["quickContainerItemCardPositioner"]
+		},
+		"valueOptions": 
+		{
+			"clipSource": "HUDPlusPlus_Position.swf",
+			"xSource": 
+			{
+				"id": "iQuickContainerItemCardCoordX:Settings",
+				"sourceType": "ModSettingInt"
+			},
+			"ySource": 
+			{
+				"id": "iQuickContainerItemCardCoordY:Settings",
+				"sourceType": "ModSettingInt"
+			},
+			"scalexSource": 
+			{
+				"id": "fQuickContainerItemCardScale:Settings",
+				"sourceType": "ModSettingFloat"
+			}
+		}
+    },
+	
+	{
+		"id": "briefItemCardPositioner",
+		"text": "Position des infos simples",
+		"type": "positioner",
+		"help": "Sélectionnez cette option pour déplacer la position des infos simples de l'objet.",
+		"action": 
+		{
+			"type": "CallExternalFunction",
+            "plugin": "HUDPlusPlus",
+            "function": "onModSettingChange",
+            "params": ["briefItemCardPositioner"]
+		},
+		"valueOptions": 
+		{
+			"clipSource": "HUDPlusPlus_Position.swf",
+			"xSource": 
+			{
+				"id": "iBriefItemInfoWidgetCoordX:Settings",
+				"sourceType": "ModSettingInt"
+			},
+			"ySource": 
+			{
+				"id": "iBriefItemInfoWidgetCoordY:Settings",
+				"sourceType": "ModSettingInt"
+			},
+			"scalexSource": 
+			{
+				"id": "fBriefItemInfoWidgetScale:Settings",
+				"sourceType": "ModSettingFloat"
+			},
+			"alphaSource_unused":
+			{
+				"id": "fBriefItemInfoWidgetAlpha:Settings",
+				"sourceType": "ModSettingFloat"			
+			}
+		}
+    }
+  ]
+}

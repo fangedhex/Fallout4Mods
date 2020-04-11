@@ -1,0 +1,49 @@
+{
+  "modName": "CompanionCommand",
+  "displayName": "Companion Command",
+  "minMcmVersion": 1,
+  "content": [
+    {
+      "text": "<p align='center'><font size='30'>Companion Command and Tactics</font></p>",
+      "html": true,
+      "type": "text"
+    },
+    {
+      "text": "A propos",
+      "type": "section"
+    },
+    {
+      "text": "'Companion Command' ajoute des raccourcis pour donner des ordres à vos compagnons.",
+      "type": "text"
+    },
+    { "type": "spacer" },
+    {
+      "text": "Touches raccourcis",
+      "type": "section"
+    },
+    {
+      "id": "command_companion",
+      "text": "Donner un ordre au compagnon",
+      "type": "hotkey",
+      "help": "Appuyez sur cette touche pour donner un ordre à votre compagnon. Suggestion: G"
+    },
+    {
+      "id": "toggle_distance",
+      "text": "Changer la distance du compagnon",
+      "type": "hotkey",
+      "help": "Appuyez sur cette touche pour changer la distance du compagnon. Suggestion: Shift-G"
+    },
+    {
+      "id": "trade",
+      "text": "Échanger avec votre compagnon",
+      "type": "hotkey",
+      "help": "Appuyez sur cette touche pour échanger avec votre compagnon. Suggestion: Ctrl-G"
+    },
+    {
+      "id": "toggle_hold",
+      "text": "Maintien de la position",
+      "type": "hotkey",
+      "help": "Appuyez sur cette touche pour dire à votre compagnon de pas bouger. Suggestion: H"
+    }
+  ]
+}
