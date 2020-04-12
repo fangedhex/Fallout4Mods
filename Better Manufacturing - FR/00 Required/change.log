@@ -1,0 +1,19 @@
+Changed all the misc mods from WSE to use the ModCrate nif model not the modbox due to the issues with hoppers and that nif model.
+Reduced the scrap out for the ammo scrapper. I felt is was too much compared to average recipe
+Added in Hans's Lef Sorter nif model to fix the conveyor issue. Thanks again Hans!
+Fixed the ammo builder bug in the builder script for too many output items when the builder amount was changed in the holo tape.
+Changed the WEaponsmith Ammo Component builder to create the actual components making it easier to use. Meaning primers and gunpowder come directly out of the machine ready to be used.
+Changed the way the Casings kit work to be more useful. Now they will create 1000 of a specfic selected case in the inventory.
+Two seperate kits. One for shotgun ammo one for standard brass ammo.
+Adjusted the Casings recipe to reflect the amount of casings recieved.
+Added items to the terminal display to display locked recipes with missing perks requirments.
+Fixed elevated left turn conveyor movement direction.
+
+Changed ESPs
+Weaponsith Extended additions
+Manufacturing Extended Additions
+Main
+
+TODO: 
+Remove Game.GetPlayer() References and replace with Property in Casing Manager Add Quest.
+Look into corpe cleaner
